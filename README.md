@@ -6,4 +6,4 @@ This is my Enterprise Application Development Assignment(#3) in which I have dev
 Prerequisites:
 1)You must have installed Visual Studio 2017 or + version in order to run this system. 
 2.You must have installed ASP.NET MVC module.
-3)Build With: This Project is build with --> Visual Studio 2017 --> C# MVC ASP.NET --> Linq to Sql is used
+3)Build With: This Project is build with --> Visual Studio 2017 --> C# MVC ASP.NET --> Linq to Sql
