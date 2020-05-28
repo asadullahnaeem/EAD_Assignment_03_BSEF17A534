@@ -1,0 +1,233 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add Mosque : 12 Hours format</title>
+</head>
+<body>
+    <form action="/Home/AddDone12" method="post">
+        Mosque Name:<input type="text" name="mosque-name" value="" required /><br /><br />
+        Mosque Area:<input type="text" value="" name="area" required /><br /><br />
+        Mosque Address:<input type="text" name="address" value="" required/><br /><br />
+        <h3>Timings (12 hours Format)</h3>
+        Fajar Timings:
+        Hours: <select name="fajar_hours">
+            @for (int s = 1; s <= 12; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+        </select>
+        Minutes: <select name="fajar_minutes">
+            @for (int s = 0; s < 60; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+
+        </select>
+        Meridiem: <select name="fajar_meridiem">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select>
+        <br /><br />
+        Duhur Timing:
+        Hours: <select name="duhur_hours">
+            @for (int s = 1; s <= 12; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+        </select>
+        Minutes: <select name="duhur_minutes">
+            @for (int s = 0; s < 60; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+        </select>
+        Meridiem: <select name="duhur_meridiem">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select>
+        <br /><br />
+        Asar Timing:
+        Hours: <select name="asar_hours">
+            @for (int s = 1; s <= 12; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+        </select>
+        Minutes: <select name="asar_minutes">
+            @for (int s = 0; s < 60; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+        </select>
+        Meridiem: <select name="asar_meridiem">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select>
+        <br /><br />
+        Magrib Timing:
+        Hours: <select name="magrib_hours">
+            @for (int s = 1; s <= 12; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+        </select>
+        Minutes: <select name="magrib_minutes">
+            @for (int s = 0; s < 60; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+        </select>
+        Meridiem: <select name="magrib_meridiem">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select>
+        <br /><br />
+        Isha Timing:
+        Hours: <select name="esha_hours">
+            @for (int s = 1; s <= 12; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+        </select>
+        Minutes: <select name="esha_minutes">
+            @for (int s = 0; s < 60; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+        </select>
+        Meridiem: <select name="esha_meridiem">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select>
+        <br /><br />
+        Jummah Timing:
+        Hours: <select name="jummah_hours">
+            @for (int s = 1; s <= 12; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+        </select>
+        Minutes: <select name="jummah_minutes">
+            @for (int s = 0; s < 60; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+        </select>
+        Meridiem: <select name="jummah_meridiem">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select>
+        <br /><br />
+        <input type="submit" value="Add" />
+        <input type="reset" value="Clear"/>
+    </form>
+</body>
+</html>

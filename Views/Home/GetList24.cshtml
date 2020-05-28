@@ -1,0 +1,78 @@
+﻿@model IEnumerable<prayer.Models.myList>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <style>
+        table, th {
+            text-align: center;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetList</title>
+</head>
+<body>
+    <h1>List of mosque(s) : 24 Hours Format</h1>
+    <table style="width:100%" border="1">
+        <tr>
+            <th>Mosque Name</th>
+            <th>Area</th>
+            <th>Address</th>
+            <th>Fajar</th>
+            <th>Duhur</th>
+            <th>Asar</th>
+            <th>Magrib</th>
+            <th>Isha</th>
+            <th>Jummah</th>
+        </tr>
+
+        @foreach (var s in Model)
+        {
+        <tr>
+            <td>@s.Mosque</td>
+            <td>@s.Area</td>
+            <td>@s.Address</td>
+            @{
+                var dateTime = new DateTime(s.Fajar.Ticks); // Date part is 01-01-0001
+                var formattedTime = dateTime.ToString("HH:mm");
+            }
+            <td>@formattedTime</td>
+            @{
+                dateTime = new DateTime(s.Duhur.Ticks); // Date part is 01-01-0001
+                formattedTime = dateTime.ToString("HH:mm");
+            }
+            <td>@formattedTime</td>
+            @{
+                dateTime = new DateTime(s.Asar.Ticks); // Date part is 01-01-0001
+                formattedTime = dateTime.ToString("HH:mm");
+            }
+            <td>@formattedTime</td>
+            @{
+                dateTime = new DateTime(s.Magrib.Ticks); // Date part is 01-01-0001
+                formattedTime = dateTime.ToString("HH:mm");
+            }
+            <td>@formattedTime</td>
+            @{
+                dateTime = new DateTime(s.Esha.Ticks); // Date part is 01-01-0001
+                formattedTime = dateTime.ToString("HH:mm");
+            }
+            <td>@formattedTime</td>
+            @{
+                dateTime = new DateTime(s.Jummah.Ticks); // Date part is 01-01-0001
+                formattedTime = dateTime.ToString("HH:mm");
+            }
+            <td>@formattedTime</td>
+            <td>
+                <a href="/Home/Edit24/@s.ID">Edit</a> | 
+                <a href="/Home/Delete/@s.ID">Delete</a>
+            </td>
+        </tr>
+        }
+    </table>
+
+</body>
+</html>

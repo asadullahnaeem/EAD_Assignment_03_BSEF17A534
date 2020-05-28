@@ -1,0 +1,32 @@
+﻿@model List<System.String>
+@{
+    ViewBag.Title = "Index";
+    if (ViewBag.Message != null)
+    {
+        <script>alert("@ViewBag.Message")</script>
+    }
+}
+<script src="~/Scripts/ForIndex.js"></script>
+
+<h2>Select area from the list</h2>
+<select id="MosqueArea" onchange="loadDoc(this.value)">
+    <option value="" selected>-Select-</option>
+
+    @foreach (var area in Model)
+    {
+        <option value="@area">@area</option>
+    }
+</select>
+Select Format: 
+<select id="format" onchange="loadDoc(this.value)">
+    <option value="">-Select-</option>
+    <option value="12">12 Hours</option>
+    <option value="24">24 Hours</option>
+</select>
+<div id="List"></div>
+@if (!Model.Any())
+{
+    <script>
+        document.getElementById("List").innerHTML = "Please add Mosque";
+    </script>
+}

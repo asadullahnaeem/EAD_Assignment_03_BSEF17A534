@@ -1,0 +1,261 @@
+﻿@model prayer.Models.myList
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Mosque</h2>
+
+<form action="/home/EditDone12/@Model.ID" method="post">
+    Mosque Name:<input type="text" name="mosque-name" value="@Model.Mosque" required /><br /><br />
+    Mosque Area:<input type="text" value="@Model.Area" name="area" required /><br /><br />
+    Mosque Address:<input type="text" name="address" value="@Model.Address" required/><br /><br />
+    <h3>Timings (12 hours Format)</h3>
+    Fajar Timings:
+    Previous timing => @{
+        var dateTime = new DateTime(Model.Fajar.Ticks); // Date part is 01-01-0001
+        var formattedTime = dateTime.ToString("hh:mm tt");
+    }
+    @formattedTime
+    <div>
+        New Timings =>
+        Hour(s): <select name="fajar_hours">
+            @for (int s = 1; s <= 12; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+        </select>
+        Minute(s): <select name="fajar_minutes">
+            @for (int s = 0; s < 60; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+
+        </select>
+        Meridiem: <select name="fajar_meridiem">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select>
+    </div><br /><br />
+    Duhur Timing: Previous timing => @{
+        dateTime = new DateTime(Model.Duhur.Ticks); // Date part is 01-01-0001
+        formattedTime = dateTime.ToString("hh:mm tt");
+    }
+    @formattedTime
+    <div>
+        New Timing =>
+        Hours: <select name="duhur_hours">
+            @for (int s = 1; s <= 12; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+        </select>
+        Minutes: <select name="duhur_minutes">
+            @for (int s = 0; s < 60; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+        </select>
+        Meridiem: <select name="duhur_meridiem">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select>
+    </div><br /><br />
+    Asar Timing: Previous timing => @{
+        dateTime = new DateTime(Model.Asar.Ticks); // Date part is 01-01-0001
+        formattedTime = dateTime.ToString("hh:mm tt");
+    }
+    @formattedTime
+    <div>
+        New Timing =>
+        Hours: <select name="asar_hours">
+            @for (int s = 1; s <= 12; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+        </select>
+        Minutes: <select name="asar_minutes">
+            @for (int s = 0; s < 60; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+        </select>
+        Meridiem: <select name="asar_meridiem">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select>
+    </div><br /><br />
+    Magrib Timing: Previous timing => @{
+        dateTime = new DateTime(Model.Magrib.Ticks); // Date part is 01-01-0001
+        formattedTime = dateTime.ToString("hh:mm tt");
+    }
+    @formattedTime
+    <div>
+        New Timing =>
+        Hours: <select name="magrib_hours">
+            @for (int s = 1; s <= 12; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+        </select>
+        Minutes: <select name="magrib_minutes">
+            @for (int s = 0; s < 60; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+        </select>
+        Meridiem: <select name="magrib_meridiem">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select>
+    </div><br /><br />
+    Isha Timing: Previous timing => @{
+        dateTime = new DateTime(Model.Esha.Ticks); // Date part is 01-01-0001
+        formattedTime = dateTime.ToString("hh:mm tt");
+    }
+    @formattedTime
+    <div>
+        New Timing =>
+        Hours: <select name="esha_hours">
+            @for (int s = 1; s <= 12; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+        </select>
+        Minutes: <select name="esha_minutes">
+            @for (int s = 0; s < 60; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+        </select>
+        Meridiem: <select name="esha_meridiem">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select>
+    </div><br /><br />
+    Jummah Timing:  Previous timing => @{
+        dateTime = new DateTime(Model.Jummah.Ticks); // Date part is 01-01-0001
+        formattedTime = dateTime.ToString("hh:mm tt");
+    }
+    @formattedTime
+    <div>
+        New Timing =>
+        Hours: <select name="jummah_hours">
+            @for (int s = 1; s <= 12; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+        </select>
+        Minutes: <select name="jummah_minutes">
+            @for (int s = 0; s < 60; s++)
+            {
+                if (@s <= 9)
+                {
+                    string show = "0" + s.ToString();
+                    <option value="@show">@show</option>
+                }
+                else
+                {
+                    <option value="@s">@s</option>
+                }
+            }
+        </select>
+        Meridiem: <select name="jummah_meridiem">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select>
+    </div><br /><br />
+    <input type="submit" value="Submit Changes" />
+</form>
